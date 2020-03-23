@@ -1,0 +1,53 @@
+.upper-bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+}
+.bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2e2e2e;
+    width:60%;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.logo img:hover{
+    cursor: pointer;
+}
+#login-cart img{
+    width: 50px;
+    height: 50px;
+}
+.form img{
+    width: 10px;
+    height: 10px;
+}
+#img-search,
+#login-cart{
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+.margin,
+.logo{
+    margin-right: 50px;
+}
+.input input{
+    width: 18rem;
+    height: 20px;
+}
+#img-id{
+    float: right;
+}
+h1{
+    color: #c4c4c4;
+    font-size: 1.7rem;
+    font-family: 'PT Sans', sans-serif;
+}
+button{
+    background-color: #30a189;
+}

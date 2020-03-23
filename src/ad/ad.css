@@ -1,0 +1,10 @@
+.big-ad{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.big-ad img{
+    height: 40rem;
+    width: 60%;
+    border-radius: 10px;
+}

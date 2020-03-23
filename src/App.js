@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import UpperBar from './upperBar/upperBar';
+import ChoiceBar from './choiceBar/choiceBar';
+import Ad from './ad/ad';
+class App extends Component{
+  constructor(){
+    super();
+    this.state={
+        platform: ""
+    };
+    this.platformStateChanger = this.platformStateChanger.bind(this);
+    this.commonReturn = this.commonReturn.bind(this);
+
+  }
+  platformStateChanger(variable){
+    console.log(variable);
+   this.setState({
+     platform: variable
+   });
+  }
+  commonReturn(){
+    return(
+      <div className="App">
+        <UpperBar platformHandler={this.platformStateChanger}/>
+        <ChoiceBar platformHandler={this.platformStateChanger}/>
+      </div>
+    );
+  }
+  render(){
+    
+    if(this.state.platform===""){
+      return(
+        <div className="App">
+        <UpperBar platformHandler={this.platformStateChanger}/>
+        <ChoiceBar platformHandler={this.platformStateChanger}/>
+        <Ad/>
+        </div>
+        
+      );
+    }else if(this.state.platform==="PS"){
+      return(this.commonReturn());
+    }
+    else if(this.state.platform==="XBOX"){
+      return(this.commonReturn());
+    }else if(this.state.platform==="NINTENDO"){
+      return(this.commonReturn());
+    }else if(this.state.platform==="PC"){
+      return(this.commonReturn());
+    }
+  }
+  
 }
 
 export default App;
