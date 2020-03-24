@@ -12,8 +12,8 @@ class UpperBar extends Component{
         this.inputChange = this.inputChange.bind(this);
         this.searchByValue = this.searchByValue.bind(this);
     }
-    imageClick(){
-        this.props.platformHandler("");
+    imageClick(value){
+        this.props.platformHandler(value);
     }
     inputChange(event){
         this.setState({
@@ -29,7 +29,7 @@ class UpperBar extends Component{
                 <div class="bar">
                     <div id="img-search">
                         <div class="logo">
-                            <img src={logo} onClick={this.imageClick} className="App-logo" alt="logo" />
+                            <img src={logo} onClick={()=>this.imageClick("")} className="App-logo" alt="logo" />
                         </div>
                         <div class="margin">
                             <form class="form">
@@ -39,8 +39,10 @@ class UpperBar extends Component{
                         </div>
                     </div>
                     <div id="login-cart">
-                        <div class="margin">
-                            <h1>login</h1>
+                        <div id="registration" class="margin">
+                            <h1 onClick={()=>this.imageClick("signin")}>sign in </h1>
+                            <h2>|</h2>
+                            <h1 onClick={()=>this.imageClick("register")}>register</h1>
                         </div>
                         <div class="margin">
                             <img src="https://img.icons8.com/color/48/000000/shopping-cart.png"/>             
