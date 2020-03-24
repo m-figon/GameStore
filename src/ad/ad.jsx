@@ -8,6 +8,7 @@ class Ad extends Component{
             "https://i.ytimg.com/vi/ncu_dypn9Tc/maxresdefault.jpg",
             "https://images.ladbible.com/thumbnail?type=jpeg&url=https://www.unilad.co.uk/wp-content/uploads/2017/05/witcher3_en_wallpaper_the_witcher_3_wild_hunt_geralt_with_trophies_1920x1080_1449484678.jpg&quality=70&height=700",
             "https://ithardware.pl/artykuly/max/7651_1.jpg"],
+            adPrice: ["-10%","-20%","-30%","-40%"],
             adNumber: 0
         }
     }
@@ -21,7 +22,12 @@ class Ad extends Component{
     render(){
         return(
             <div class="big-ad">
+                <div class="ad">
                 <img src={this.state.adArray[this.state.adNumber%4]} alt="" />
+                <div class="discount">
+                <h1>{this.state.adPrice[this.state.adNumber%4]}</h1>
+                </div>
+                </div>
             </div>
         );
     }

@@ -5,10 +5,23 @@ import search from './search.png';
 class UpperBar extends Component{
     constructor(){
         super();
+        this.state={
+            value: ""
+        }
         this.imageClick = this.imageClick.bind(this);
+        this.inputChange = this.inputChange.bind(this);
+        this.searchByValue = this.searchByValue.bind(this);
     }
     imageClick(){
         this.props.platformHandler("");
+    }
+    inputChange(event){
+        this.setState({
+            value: event.target.value
+        })
+    }
+    searchByValue(){
+        console.log(this.state.value);
     }
     render(){
         return(
@@ -16,14 +29,13 @@ class UpperBar extends Component{
                 <div class="bar">
                     <div id="img-search">
                         <div class="logo">
-                            <img src={logo} onClick={this.imageClick}className="App-logo" alt="logo" />
+                            <img src={logo} onClick={this.imageClick} className="App-logo" alt="logo" />
                         </div>
                         <div class="margin">
                             <form class="form">
-                            <input type='text' value=''/>
-                            <button><img src={search}></img></button>
+                            <input type='text' onChange={this.inputChange} value={this.state.value}/>
+                            <button type="button"><img src={search} onClick={this.searchByValue}></img></button>
                             </form>
-                            
                         </div>
                     </div>
                     <div id="login-cart">

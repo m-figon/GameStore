@@ -41,8 +41,19 @@ class ChoiceBar extends Component{
                 idPC: "selected"
             });
         }
-        
         this.props.platformHandler(variable);
+    }
+    componentDidMount(){
+        setInterval(()=>{
+            if(this.props.name===""){
+                this.setState({
+                    idPS: "",
+                    idXBOX: "",
+                    idNINTENDO: "",
+                    idPC: ""
+                });
+            }
+        },500);
     }
     render(){
         return(

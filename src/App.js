@@ -15,10 +15,9 @@ class App extends Component{
 
   }
   platformStateChanger(variable){
-    console.log(variable);
-   this.setState({
-     platform: variable
-   });
+    this.setState({
+      platform: variable
+    });
   }
   commonReturn(){
     return(
@@ -34,7 +33,7 @@ class App extends Component{
       return(
         <div className="App">
         <UpperBar platformHandler={this.platformStateChanger}/>
-        <ChoiceBar platformHandler={this.platformStateChanger}/>
+        <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         <Ad/>
         </div>
         
