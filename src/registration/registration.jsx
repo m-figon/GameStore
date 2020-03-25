@@ -22,12 +22,18 @@ class Registration extends Component{
             id: "months",
             value: "Month"},
             selectCountry: "",
+            selectMonth: "",
+            selectDay: "",
+            selectYear: "",
         }
         this.inputChange = this.inputChange.bind(this);
         this.displayData = this.displayData.bind(this);
         this.showHideTooltip = this.showHideTooltip.bind(this);
-        this.selectChange = this.selectChange.bind(this);
-
+        this.selectCountryChange = this.selectCountryChange.bind(this);
+        this.selectMonthChange = this.selectMonthChange.bind(this);
+        this.selectDayChange = this.selectDayChange.bind(this);
+        this.selectYearChange = this.selectYearChange.bind(this);
+        this.selectImplement = this.selectImplement.bind(this);
     }
     inputChange(type,event){
       for (const property in this.state) {
@@ -47,23 +53,45 @@ class Registration extends Component{
         console.log(e);
       }
     }
-    displayData(){
-      console.log(this.state.selectCountry.e);
-      
-      (this.state.email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/)==null)?
-      this.validate("#email","incorrect"):this.validate("#email","correct");
-      (this.state.account.match(/^[a-zA-Z0-9\.\-_]{4,10}$/)==null)?
-      this.validate("#ac-name","incorrect"):this.validate("#ac-name","correct");
-      (this.state.password1.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/)==null)?
-      this.validate("#password","incorrect"):this.validate("#password","correct");
-      (this.state.password2.match(this.state.password1)==null)?
-      this.validate("#confirm-password","incorrect"):this.validate("#confirm-password","correct");
+    selectImplement(select,id){
       try{
-        ((this.state.selectCountry.match(undefined))||(this.state.selectCountry.match(null)))?
-        this.validate("#countries","incorrect"):this.validate("#countries","correct");
+        ((select.match(undefined))||(select.match(null)))?
+        this.validate(id,"incorrect"):this.validate(id,"correct");
       }catch(e){
         console.log(e);
       }
+    }
+    displayData(){
+      //console.log(this.state.selectCountry.e);
+      if(this.state.email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/)==null){
+        this.validate("#email","incorrect");
+        this.showHideTooltip("#hiddenTooltip1",'visibleTooltip1');
+      }else{
+        this.validate("#email","correct"); 
+      }
+      if(this.state.account.match(/^[a-zA-Z0-9\.\-_]{4,10}$/)==null){
+        this.validate("#ac-name","incorrect");
+        this.showHideTooltip("#hiddenTooltip2",'visibleTooltip2');
+      }else{
+        this.validate("#ac-name","correct");
+      }
+      if(this.state.password1.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/)==null){
+        this.validate("#password","incorrect");
+        this.showHideTooltip("#hiddenTooltip3",'visibleTooltip3');
+      }else{
+        this.validate("#password","correct");
+      }
+      if(this.state.password2===this.state.password1 && this.state.password2!=""){
+        this.validate("#confirm-password","correct");
+      }
+      else{
+        this.validate("#confirm-password","incorrect");
+        this.showHideTooltip("#hiddenTooltip4",'visibleTooltip4');
+      }
+      this.selectImplement(this.state.selectCountry,"#countries");
+      this.selectImplement(this.state.selectMonth,"#months");
+      this.selectImplement(this.state.selectDay,"#days");
+      this.selectImplement(this.state.selectYear,"#years");
     }
     showHideTooltip(name,newId){
       try{
@@ -74,9 +102,24 @@ class Registration extends Component{
         console.log(e);
       }
     }
-    selectChange(e){
+    selectCountryChange(e){
       this.setState({
         selectCountry: {e}
+      })
+    }
+    selectMonthChange(e){
+      this.setState({
+        selectMonth: {e}
+      })
+    }
+    selectDayChange(e){
+      this.setState({
+        selectDay: {e}
+      })
+    }
+    selectYearChange(e){
+      this.setState({
+        selectYear: {e}
       })
     }
     render(){
@@ -90,11 +133,11 @@ class Registration extends Component{
                 <h1>password</h1><input id="password" onFocus={()=> this.showHideTooltip("#hiddenTooltip3",'visibleTooltip3')} onBlur={()=> this.showHideTooltip("#visibleTooltip3",'hiddenTooltip3')}onChange={(e) => this.inputChange("password1", e)} type="text" value={this.state.password1}/><div id="hiddenTooltip3">Password must consist of 8-13 letters, cointain: one upper and lower case letter, one digit, one special character</div>
                 <h1>confirm password</h1><input id="confirm-password" onFocus={()=> this.showHideTooltip("#hiddenTooltip4",'visibleTooltip4')} onBlur={()=> this.showHideTooltip("#visibleTooltip4",'hiddenTooltip4')}onChange={(e) => this.inputChange("password2", e)} type="text" value={this.state.password2}/><div id="hiddenTooltip4">This field must match your password</div>
                 <h1>country</h1>
-                <Select array={this.state.countriesObject.array} selectHandler={this.selectChange} id={this.state.countriesObject.id} value={this.state.countriesObject.value}/>
+                <Select array={this.state.countriesObject.array} selectHandler={this.selectCountryChange} id={this.state.countriesObject.id} value={this.state.countriesObject.value}/>
                 <h1>date of birth</h1>
-                <SelectNumber start={1} end={31} value="Days" increment={1}/>
-                <Select array={this.state.monthsObject.array} id={this.state.monthsObject.id} value={this.state.monthsObject.value}/>
-                <SelectNumber start={2020} end={1920} value="Years" increment={-1}/>
+                <SelectNumber id="days" selectHandler={this.selectDayChange} start={1} end={31} value="Days" increment={1}/>
+                <Select array={this.state.monthsObject.array} selectHandler={this.selectMonthChange} id={this.state.monthsObject.id} value={this.state.monthsObject.value}/>
+                <SelectNumber id="years" selectHandler={this.selectYearChange} start={2020} end={1920} value="Years" increment={-1}/>
               </form>
             <button onClick={this.displayData}>Register</button>
             </div>
@@ -102,8 +145,4 @@ class Registration extends Component{
         );
     }
 }
-//apply match function on input fields values after button click
-//alert form information on screen after submit
-//do same thing with months that you did with countries
-//https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Polecenia/for...in
 export default Registration;

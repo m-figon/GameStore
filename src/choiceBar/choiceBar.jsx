@@ -45,7 +45,7 @@ class ChoiceBar extends Component{
     }
     componentDidMount(){
         setInterval(()=>{
-            if(this.props.name===""){
+            if(this.props.name==="" || this.props.name==="register" || this.props.name==="signin"){
                 this.setState({
                     idPS: "",
                     idXBOX: "",
