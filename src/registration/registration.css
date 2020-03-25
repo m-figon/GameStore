@@ -54,10 +54,14 @@
     justify-content: center;
 }
 
-#tooltip1,
-#tooltip2,
-#tooltip3,
-#tooltip4{
+#hiddenTooltip1,
+#hiddenTooltip2,
+#hiddenTooltip3,
+#hiddenTooltip4,
+#visibleTooltip1,
+#visibleTooltip2,
+#visibleTooltip3,
+#visibleTooltip4{
     visibility: hidden;
     display: block;
     position: relative;
@@ -65,9 +69,15 @@
     left:15.5rem;
     width: 10rem;
     padding: 0.2rem 0.5rem;
-    background-color: #4a4a4a;
+    background-color: #30a189;
     color:#cacaca;
     font-family: 'PT Sans', sans-serif;
     font-size: 0.6rem;
     border-radius: 5px;
+}
+#visibleTooltip1,
+#visibleTooltip2,
+#visibleTooltip3,
+#visibleTooltip4{
+    visibility: visible;
 }

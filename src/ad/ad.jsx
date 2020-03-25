@@ -5,7 +5,7 @@ class Ad extends Component{
         super();
         this.state={
             adArray: ["https://images.hdqwalls.com/download/rayman-legends-4k-do-1336x768.jpg",
-            "https://i.ytimg.com/vi/ncu_dypn9Tc/maxresdefault.jpg",
+            "https://i.ytimg.com/vi/LTqczRnNqDc/maxresdefault.jpg",
             "https://images.ladbible.com/thumbnail?type=jpeg&url=https://www.unilad.co.uk/wp-content/uploads/2017/05/witcher3_en_wallpaper_the_witcher_3_wild_hunt_geralt_with_trophies_1920x1080_1449484678.jpg&quality=70&height=700",
             "https://ithardware.pl/artykuly/max/7651_1.jpg"],
             adPrice: ["-10%","-20%","-30%","-40%"],
