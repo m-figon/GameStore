@@ -28,6 +28,14 @@ class Registration extends Component{
         this.showHideTooltip = this.showHideTooltip.bind(this);
     }
     inputChange(type,event){
+      for (const property in this.state) {
+        if(type==property){
+          this.setState({
+            [property]: event.target.value
+          })
+        }
+      }
+      /*
       if(type==="email"){
         this.setState({
           email: event.target.value
@@ -49,10 +57,30 @@ class Registration extends Component{
           country: event.target.value
         })
       }
+      */
       
     }
     displayData(){
-      alert("email: " + this.state.email + "\npassword1: " + this.state.password1)
+      console.log(this.state.email);
+      
+      if(this.state.email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/)==null){
+        try{
+          const node = ReactDOM.findDOMNode(this);
+          const child = node.querySelector("#email");
+          child.className="incorrect";
+        }catch(e){
+          console.log(e);
+        }
+      }else{
+        try{
+          const node = ReactDOM.findDOMNode(this);
+          const child = node.querySelector("#email");
+          child.className="correct";
+        }catch(e){
+          console.log(e);
+        }
+      }
+      
     }
     showHideTooltip(name,newId){
       try{
@@ -64,6 +92,7 @@ class Registration extends Component{
       }
     }
     render(){
+      
         return(
             <div class="registration">
             <div class="app-form">
@@ -87,4 +116,5 @@ class Registration extends Component{
 }
 //apply match function on input fields values after button click
 //alert form information on screen after submit
+//https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Polecenia/for...in
 export default Registration;

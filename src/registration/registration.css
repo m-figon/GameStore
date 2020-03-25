@@ -17,7 +17,6 @@
 .app-form input,
 .app-form select{
     padding: 0.2rem 0.2rem;
-    border: #b3b3b3 solid 0.5px;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.2rem;
     color: #383838;
