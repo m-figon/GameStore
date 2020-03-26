@@ -55,11 +55,13 @@ class Registration extends Component{
     }
     selectImplement(select,id,hidden,visible){
       try{
-        if((select.match(undefined))||(select.match(null))){
+        if(select==="" || select.e==="none"){
           this.validate(id,"incorrect");
           this.showHideTooltip(hidden,visible);
         }else{
           this.validate(id,"correct");
+          this.showHideTooltip(visible,hidden);
+
         }
       }catch(e){
         console.log(e);
@@ -143,7 +145,6 @@ class Registration extends Component{
                 <h1>password</h1><input id="password" onFocus={()=> this.showHideTooltip("hiddenTooltip3",'visibleTooltip3')} onBlur={()=> this.showHideTooltip("visibleTooltip3",'hiddenTooltip3')}onChange={(e) => this.inputChange("password1", e)} type="text" value={this.state.password1}/><div id="hiddenTooltip3">Password must consist of 8-13 letters, cointain: one upper and lower case letter, one digit, one special character</div>
                 <h1>confirm password</h1><input id="confirm-password" onFocus={()=> this.showHideTooltip("hiddenTooltip4",'visibleTooltip4')} onBlur={()=> this.showHideTooltip("visibleTooltip4",'hiddenTooltip4')}onChange={(e) => this.inputChange("password2", e)} type="text" value={this.state.password2}/><div id="hiddenTooltip4">This field must match your password</div>
                 <h1>country</h1><div id="hiddenTooltip5">Please select a correct option</div>
-
                 <Select tooltipShowHandler={()=>this.showHideTooltip("hiddenTooltip5",'visibleTooltip5')} tooltipHideHandler={()=>this.showHideTooltip("visibleTooltip5",'hiddenTooltip5')} array={this.state.countriesObject.array} selectHandler={this.selectCountryChange} id={this.state.countriesObject.id} value={this.state.countriesObject.value}/>
                 <h1>date of birth</h1><div id="hiddenTooltip6">Please select a correct option</div>
                 <SelectNumber tooltipShowHandler={()=>this.showHideTooltip("hiddenTooltip6",'visibleTooltip6')} tooltipHideHandler={()=>this.showHideTooltip("visibleTooltip6",'hiddenTooltip6')} id="days" selectHandler={this.selectDayChange} start={1} end={31} value="Days" increment={1}/>
@@ -156,4 +157,5 @@ class Registration extends Component{
         );
     }
 }
+//jak skonczysz rejestracje to zrob zeby przedmioty z zakladek konsol dodawane zmienialy grafike koszyka
 export default Registration;

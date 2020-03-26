@@ -5,6 +5,7 @@ import UpperBar from './upperBar/upperBar';
 import ChoiceBar from './choiceBar/choiceBar';
 import Ad from './ad/ad';
 import Registration from './registration/registration';
+import Console from './console/console';
 class App extends Component{
   constructor(){
     super();
@@ -40,7 +41,14 @@ class App extends Component{
         
       );
     }else if(this.state.platform==="PS"){
-      return(this.commonReturn());
+      return(
+        <div className="App">
+        <UpperBar platformHandler={this.platformStateChanger}/>
+        <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
+        <Console/>
+        </div>
+        
+      );
     }
     else if(this.state.platform==="XBOX"){
       return(this.commonReturn());
