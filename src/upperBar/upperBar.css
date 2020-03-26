@@ -35,7 +35,8 @@ img{
     width: 400px;
 }
 .margin,
-.logo{
+.logo,
+.margin-right{
     margin-right: 50px;
 }
 .input input{
@@ -57,5 +58,13 @@ button{
 }
 #registration h1:hover{
     text-shadow: 0.2px 0.2px 2px white;
+    cursor: pointer;
+}
+#products-counter{
+    position: absolute;
+    top:0rem;
+    margin-left: 2.5rem;
+}
+.margin-right img:hover{
     cursor: pointer;
 }

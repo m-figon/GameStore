@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import UpperBar from './upperBar/upperBar';
 import ChoiceBar from './choiceBar/choiceBar';
 import Ad from './ad/ad';
 import Registration from './registration/registration';
 import Console from './console/console';
+import Cart from './cart/cart';
 import PS from './console/PS.json';
 import XBOX from './console/XBOX.json';
 import NINTENDO from './console/NINTENDO.json';
@@ -14,10 +14,13 @@ class App extends Component{
   constructor(){
     super();
     this.state={
-        platform: ""
+        platform: "",
+        cartNumber: 0,
+        items: []
     };
     this.platformStateChanger = this.platformStateChanger.bind(this);
     this.commonReturn = this.commonReturn.bind(this);
+    this.cartNumberUpdate = this.cartNumberUpdate.bind(this);
 
   }
   platformStateChanger(variable){
@@ -25,12 +28,30 @@ class App extends Component{
       platform: variable
     });
   }
+  cartNumberUpdate(consoleType,id){
+    this.setState({
+      cartNumber: this.state.cartNumber+1
+    })
+    if(consoleType==="PS"){
+      console.log(PS[id]);
+      this.state.items.push(PS[id])
+    }else if(consoleType==="XBOX"){
+      console.log(XBOX[id]);
+      this.state.items.push(XBOX[id])
+    }else if(consoleType==="NINTENDO"){
+      console.log(NINTENDO[id]);
+      this.state.items.push(NINTENDO[id])
+    }else if(consoleType==="PC"){
+      console.log(PC[id]);
+      this.state.items.push(PC[id])
+    }
+  }
   commonReturn(jsonFile){
     return(
       <div className="App">
-        <UpperBar platformHandler={this.platformStateChanger}/>
+        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger}/>
-        <Console file={jsonFile}/>
+        <Console changeCartNumber={this.cartNumberUpdate} file={jsonFile}/>
       </div>
     );
   }
@@ -39,7 +60,7 @@ class App extends Component{
     if(this.state.platform===""){
       return(
         <div className="App">
-        <UpperBar platformHandler={this.platformStateChanger}/>
+        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         <Ad/>
         </div>
@@ -58,7 +79,7 @@ class App extends Component{
     else if(this.state.platform==="signin"){
       return(
         <div className="App">
-        <UpperBar platformHandler={this.platformStateChanger}/>
+        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         </div>
       );
@@ -66,15 +87,23 @@ class App extends Component{
     else if(this.state.platform==="register"){
       return(
         <div className="App">
-        <UpperBar platformHandler={this.platformStateChanger}/>
+        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         <Registration/>
         </div>
         
       );
     }
+    else if(this.state.platform==="cart"){
+      return(
+        <div className="App">
+        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
+        <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
+        <Cart array={this.state.items}/>
+        </div>
+      );
+    }
   }
   
 }
-//dodaj funkcjonalnosc koszyka
 export default App;

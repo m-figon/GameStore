@@ -3,31 +3,36 @@
         "id": 0,
         "src": "https://sm.ign.com/t/ign_pl/game/h/halo-5/halo-5_sj24.1200.png",
         "name": "Halo 5: Guardians",
-        "price": "25.99$"
+        "price": "25.99$",
+        "console": "XBOX"
     },
     {
         "id": 1,
         "src": "https://e.allegroimg.com/s1024/0c0d11/456cfd974cfdaefacad85b1674ce",
         "name": "Forza Motorsport 7",
-        "price": "23.99$"
+        "price": "23.99$",
+        "console": "XBOX"
     },
     {
         "id": 2,
         "src": "https://img.sferis.pl/UUKgtWm/_/100/0/j3T1C1c7r0s091o5H2V2t705g8I2N539/gra-xbox-one-wersja-box-sea-of-thieves.jpg",
         "name": "Sea of Thieves",
-        "price": "31.99$"
+        "price": "31.99$",
+        "console": "XBOX"
     },
     {
         "id": 3,
         "src": "https://image.ceneostatic.pl/data/products/39745615/i-gears-of-war-4-gra-xbox-one.jpg",
         "name": "Gears of War 4",
-        "price": "19.99$"
+        "price": "19.99$",
+        "console": "XBOX"
     },
     {
         "id": 4,
         "src": "https://image.ceneostatic.pl/data/products/28339110/i-rayman-legends-gra-xbox-one.jpg",
         "name": "Rayman Legends",
-        "price": "25.99$"
+        "price": "25.99$",
+        "console": "XBOX"
     },
     {
         "id": 5,

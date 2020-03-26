@@ -1,13 +1,11 @@
 import React,{Component} from 'react';
 import './console.css';
-class Console extends Component{
-    render(){
-        const display=this.props.file.map((game) =>
+function Console(props){
+        const display=props.file.map((game) =>
                     <div class="product">
                         <div class="product-sign">
                             <h1 key={game.id}>{game.name}</h1>
-                            <img id='cart' src="https://img.icons8.com/color/48/000000/shopping-cart.png"/>             
-
+                            <img id='cart' onClick={()=>props.changeCartNumber(game.console,game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png"/>             
                         </div>
                         <div class="image">
                             <img key={game.id} src={game.src} alt=""/>
@@ -37,10 +35,6 @@ class Console extends Component{
                 </div>
             </div>
         </div>
-        );
-        
-    }
-
+        );  
 }
 export default Console;
-//dodaj grid layout do tego jakis

@@ -44,8 +44,9 @@ class UpperBar extends Component{
                             <h2>|</h2>
                             <h1 onClick={()=>this.imageClick("register")}>register</h1>
                         </div>
-                        <div class="margin">
-                            <img src="https://img.icons8.com/color/48/000000/shopping-cart.png"/>             
+                        <div class="margin-right">
+                            <h1 id='products-counter'>{this.props.number}</h1>
+                            <img onClick={()=>this.imageClick("cart")} src="https://img.icons8.com/color/48/000000/shopping-cart.png"/>             
                         </div>
                     </div> 
                 </div>
