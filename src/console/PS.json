@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "src": "https://gamebox-eg.com/files/39978_1522248498.jpg",
+        "name": "God of War",
+        "price": "25.99$"
+    },
+    {
+        "id": 1,
+        "src": "https://image.ceneostatic.pl/data/products/36159822/i-bloodborne-gra-ps4.jpg",
+        "name": "Bloodbourne",
+        "price": "23.99$"
+    },
+    {
+        "id": 2,
+        "src": "https://image.ceneostatic.pl/data/products/50760291/i-dark-souls-iii-the-fire-fades-edition-goty-gra-ps4.jpg",
+        "name": "Dark Souls III",
+        "price": "31.99$"
+    },
+    {
+        "id": 3,
+        "src": "https://i5.walmartimages.ca/images/Enlarge/530/472/999999-883929530472.jpg",
+        "name": "The Witcher III",
+        "price": "19.99$"
+    },
+    {
+        "id": 4,
+        "src": "https://image.ceneostatic.pl/data/products/43820453/i-for-honor-gra-ps4.jpg",
+        "name": "For Honor",
+        "price": "25.99$"
+    },
+    {
+        "id": 5,
+        "src": "https://ecsmedia.pl/c/star-wars-jedi-upadly-zakon-b-iext54541214.jpg",
+        "name": "Star Wars Jedi: Fallen Order",
+        "price": "33.99$"
+    }
+    ]

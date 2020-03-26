@@ -6,6 +6,10 @@ import ChoiceBar from './choiceBar/choiceBar';
 import Ad from './ad/ad';
 import Registration from './registration/registration';
 import Console from './console/console';
+import PS from './console/PS.json';
+import XBOX from './console/XBOX.json';
+import NINTENDO from './console/NINTENDO.json';
+import PC from './console/PC.json';
 class App extends Component{
   constructor(){
     super();
@@ -21,11 +25,12 @@ class App extends Component{
       platform: variable
     });
   }
-  commonReturn(){
+  commonReturn(jsonFile){
     return(
       <div className="App">
         <UpperBar platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger}/>
+        <Console file={jsonFile}/>
       </div>
     );
   }
@@ -41,21 +46,14 @@ class App extends Component{
         
       );
     }else if(this.state.platform==="PS"){
-      return(
-        <div className="App">
-        <UpperBar platformHandler={this.platformStateChanger}/>
-        <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
-        <Console/>
-        </div>
-        
-      );
+      return(this.commonReturn(PS));
     }
     else if(this.state.platform==="XBOX"){
-      return(this.commonReturn());
+      return(this.commonReturn(XBOX));
     }else if(this.state.platform==="NINTENDO"){
-      return(this.commonReturn());
+      return(this.commonReturn(NINTENDO));
     }else if(this.state.platform==="PC"){
-      return(this.commonReturn());
+      return(this.commonReturn(PC));
     }
     else if(this.state.platform==="signin"){
       return(
@@ -78,5 +76,5 @@ class App extends Component{
   }
   
 }
-
+//dodaj funkcjonalnosc koszyka
 export default App;
