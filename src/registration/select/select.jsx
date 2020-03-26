@@ -16,12 +16,14 @@ class Select extends Component{
     }
     render(){
         return(
-            <select id={this.props.id} value={this.state.selectValue} onChange={(e)=>this.afterOnChange(e)}>
+            <>
+            <select onFocus={this.props.tooltipShowHandler} onBlur={this.props.tooltipHideHandler} id={this.props.id} value={this.state.selectValue} onChange={(e)=>this.afterOnChange(e)}>
             <option value="none">{this.props.value}</option>
             {this.props.array.map((value) => {
                 return <option value={value}>{value}</option>
             })}
             </select>
+            </>
         );
     }
         

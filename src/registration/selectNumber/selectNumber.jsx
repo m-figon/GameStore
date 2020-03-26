@@ -26,7 +26,7 @@ class SelectNumber extends Component{
             }
         }
         return(
-        <select id={this.props.id} value={this.state.selectValue} onChange={(e)=>this.afterOnChange(e)}><option value="none">{this.props.value}</option>{array}</select>
+        <select onFocus={this.props.tooltipShowHandler} onBlur={this.props.tooltipHideHandler} id={this.props.id} id={this.props.id} value={this.state.selectValue} onChange={(e)=>this.afterOnChange(e)}><option value="none">{this.props.value}</option>{array}</select>
         );
     }
         

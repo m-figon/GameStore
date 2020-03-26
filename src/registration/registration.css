@@ -11,7 +11,7 @@
     align-items: center;
     background-color: #2e2e2e;
     width:20rem;
-    height: 50rem;
+    height: 47rem;
     border-radius: 10px;
 }
 .app-form input,
@@ -31,7 +31,7 @@
 .app-form h1{
     display: block;
     color: #c4c4c4;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-family: 'PT Sans', sans-serif;
     
 }
@@ -57,10 +57,14 @@
 #hiddenTooltip2,
 #hiddenTooltip3,
 #hiddenTooltip4,
+#hiddenTooltip5,
+#hiddenTooltip6,
 #visibleTooltip1,
 #visibleTooltip2,
 #visibleTooltip3,
-#visibleTooltip4{
+#visibleTooltip4,
+#visibleTooltip5,
+#visibleTooltip6{
     visibility: hidden;
     display: block;
     position: relative;
@@ -74,9 +78,20 @@
     font-size: 0.6rem;
     border-radius: 5px;
 }
+#hiddenTooltip5,
+#hiddenTooltip6,
+#visibleTooltip5,
+#visibleTooltip6{
+    top:1rem;
+}
 #visibleTooltip1,
 #visibleTooltip2,
 #visibleTooltip3,
-#visibleTooltip4{
+#visibleTooltip4,
+#visibleTooltip5,
+#visibleTooltip6{
     visibility: visible;
+}
+#countries{
+    width: 15.5rem;    
 }
