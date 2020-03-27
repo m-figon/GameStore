@@ -16,6 +16,7 @@
     font-size: 3rem;
     color: #30a189;
 }
+
 .product-inside{
     width: 40%;
     background-color: white;
@@ -39,5 +40,35 @@
 .inside-cart{
     display: grid;
     grid-template-columns: auto auto auto;
+    
+}
+@media (max-width: 1650px){
+    .product-inside{
+        width:15rem;
+    }
+    #cancel{
+        margin-left: 6rem;
+        margin-top: 6rem;
+        width: 1rem;
+        height: 1rem;
+     
+    }
+}
+@media (max-width: 1300px){
+    .product-inside{
+        width:10rem;
+    }
+    #cancel{
+        margin-left: 2rem;
+        margin-top: 2rem;
+        width: 1rem;
+        height: 1rem;
+    }
+    
+}
+@media (max-width: 1000px){
+    .product-inside{
+        width:6rem;
+    }
     
 }

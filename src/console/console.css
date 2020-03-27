@@ -66,3 +66,42 @@
     border-radius: 10px;
     width: 20rem;
 }
+@media (max-width: 1700px){
+    .sign h1,
+    .price h1,
+    .product-sign h1{
+        font-size: 0.8rem;
+    }
+    
+    #cart{
+        width: 1.5rem;
+        height: 1.5rem;
+        
+    }
+    .product{
+        width: 12rem;
+
+    }
+}
+@media (max-width: 1300px){
+    .product{
+        width: 10rem;
+
+    }
+    .image img{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+@media (max-width: 1000px){
+    .product{
+        width: 7rem;
+
+    }
+}
+@media (max-width: 800px){
+    .product{
+        width: 5rem;
+
+    }
+}

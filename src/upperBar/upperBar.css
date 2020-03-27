@@ -68,3 +68,25 @@ button{
 .margin-right img:hover{
     cursor: pointer;
 }
+@media (max-width: 1300px){
+    .bar{
+        width:100%;
+    }
+    h1,h2{
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 800px){
+    h1,h2{
+        font-size: 1rem;
+        margin-left: 0px;
+    }
+    .margin-right{
+        margin-right: 0px;
+    }
+    #products-counter{
+        position: absolute;
+        top:1rem;
+        margin-left: 2.5rem;
+    }
+}
