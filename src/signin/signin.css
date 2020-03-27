@@ -1,21 +1,24 @@
 
-.registration{
+.login{
     display: flex;
     flex-direction: row;
     justify-content: center; 
+    align-items: center;
+    height: 70%;
 }
-.app-form{
+.sign-form{
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #6d6d6d;
     width:20rem;
-    height: 47rem;
+    height: 20rem;
     border-radius: 10px;
 }
-.app-form input,
-.app-form select{
+.sign-form input,
+.sign-form select{
     padding: 0.2rem 0.2rem;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.2rem;
@@ -28,14 +31,14 @@
 .incorrect{
     border: #c70202 solid 2px;
 }
-.app-form h1{
+.sign-form h1{
     display: block;
     color: #c4c4c4;
     font-size: 1.3rem;
     font-family: 'PT Sans', sans-serif;
     
 }
-.app-form button{
+.sign-form button{
     margin: 2rem 0;
     background-color: #4a4a4a;
     color:#cacaca;
@@ -44,7 +47,7 @@
     border: 1px solid black;
     border-radius: 5px;
 }
-.app-form button:hover{
+.sign-form button:hover{
     cursor: pointer;
 }
 #submit{

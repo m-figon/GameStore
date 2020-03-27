@@ -12,7 +12,32 @@
     flex-direction: column;
     align-items: center;
 }
-#inside-cart{
+#inside-cart-sign{
     font-size: 3rem;
-    color: #2e2e2e;
+    color: #30a189;
+}
+.product-inside{
+    width: 40%;
+    background-color: white;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    width: 20rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+#cancel{
+    position: absolute;
+    margin-left: 7rem;
+    margin-top: 5rem;
+    width: 2rem;
+    height: 2rem;
+ 
+}
+.product-sign img:hover{
+    cursor: pointer;
+}
+.inside-cart{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
 }
