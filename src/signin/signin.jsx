@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import accounts from './accounts.json';
-import './signin.css';
+import '../registration/registration.css';
 
 
 class SignIn extends Component{
@@ -10,10 +10,13 @@ class SignIn extends Component{
         this.state={
           account: "",
           password1: "",
+          type: "text"
         }
         this.inputChange = this.inputChange.bind(this);
         this.displayData = this.displayData.bind(this);
         this.showHideTooltip = this.showHideTooltip.bind(this);
+        this.passwordHideShow = this.passwordHideShow.bind(this);
+
     }
     inputChange(type,event){
       for (const property in this.state) {
@@ -61,15 +64,44 @@ class SignIn extends Component{
         console.log(e);
       }
     }
+    passwordHideShow(){
+      if(this.state.type=="password"){
+        this.setState({
+          type: "text"
+        });
+      }else if(this.state.type=="text"){
+        this.setState({
+          type: "password"
+        });
+      }
+    }
     render(){
       
         return(
-            <div class="login">
-            <div class="sign-form">
+            <div class="registration">
+            <div id="login" class="app-form">
             <form id="form">
-                <h1>account name</h1><input id="ac-name"  onChange={(e) => this.inputChange("account", e)} type="text" value={this.state.account}/><div id="hiddenTooltip1">Please enter correct account name and password</div>
-                <h1>password</h1><input id="password" onChange={(e) => this.inputChange("password1", e)} type="text" value={this.state.password1}/>
+            <div class="one-line">
+                <div class="left">
+                <h1>account name</h1>
+                </div>
+                <div class="right">
+                <input id="ac-name"  onChange={(e) => this.inputChange("account", e)} type="text" value={this.state.account}/>
+                <div id="hiddenTooltip1">Please enter correct account name and password</div>
+                </div>
+              </div>
+              <div class="one-line">
+                <div class="left">
+                <h1>password</h1>
+                </div>
+                <div class="right">
+                <input id="password"  onChange={(e) => this.inputChange("password1", e)} type={this.state.type} value={this.state.password1}/>
+                </div>
+              </div>
+              <button type="button" id="show" onClick={() => this.passwordHideShow()}>SHOW</button>
+
               </form>
+              
             <button onClick={this.displayData}>Login</button>
             </div>
             </div>
