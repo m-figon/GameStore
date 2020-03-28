@@ -26,6 +26,14 @@
     },
     {
         "id": 3,
+        "src": "https://s.cdaction.pl/obrazki/ps2-cudo_4bw2.jpg",
+        "name": "PS2",
+        "price": "111.99$",
+        "console": "PS",
+        "type": "console"
+    },
+    {
+        "id": 4,
         "src": "https://i5.walmartimages.ca/images/Enlarge/530/472/999999-883929530472.jpg",
         "name": "The Witcher III",
         "price": "19.99$",
@@ -33,7 +41,7 @@
         "type": "game"
     },
     {
-        "id": 4,
+        "id": 5,
         "src": "https://image.ceneostatic.pl/data/products/43820453/i-for-honor-gra-ps4.jpg",
         "name": "For Honor",
         "price": "25.99$",
@@ -41,15 +49,23 @@
         "type": "game"
     },
     {
-        "id": 5,
+        "id": 6,
         "src": "https://static3.nordic.pictures/2024065-thickbox_default/sony-playstation-4-slim-1tb-gamepad-dualshock-4.jpg",
         "name": "PS4 Slim 1TB",
-        "price": "231.99$",
+        "price": "331.99$",
         "console": "PS",
         "type": "console"
     },
     {
-        "id": 6,
+        "id": 7,
+        "src": "https://lh3.googleusercontent.com/proxy/gNfI32WnL061MjoQS-FrYIZBVw9hNpI7Qv3TD6b2lPQDYVQ5CO565-wLHUIon51q5WhRvBO9a1Cb5OaEtGe6Jfl6l7qO2GzCTKTasK0qnLRQlSeWloezYEytgIiFmCHpxwo",
+        "name": "PS3 Slim 320GB",
+        "price": "222.99$",
+        "console": "PS",
+        "type": "console"
+    },
+    {
+        "id": 8,
         "src": "https://ecsmedia.pl/c/star-wars-jedi-upadly-zakon-b-iext54541214.jpg",
         "name": "Star Wars Jedi: Fallen Order",
         "price": "33.99$",

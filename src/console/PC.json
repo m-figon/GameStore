@@ -15,6 +15,15 @@
         "console": "PC",
         "type": "game"
     },
+    
+    {
+        "id": 2,
+        "src": "https://www.mediaexpert.pl/media/cache/gallery/product/0/694/800/872/qwpdhvhn/images/17/1777553/GS75_Stealth_8SF_076PL_1.jpg",
+        "name": "MSI GS75 Stealth",
+        "price": "331.99$",
+        "console": "PC",
+        "type": "console"
+    },
     {
         "id": 2,
         "src": "https://artmagames.com/513-large_default/the-sims-4-podstawa-pc-box-pl.jpg",
@@ -49,6 +58,14 @@
     },
     {
         "id": 6,
+        "src": "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2019/2/pr_2019_2_11_8_31_17_229_00.jpg",
+        "name": "Acer Predator Triton 500",
+        "price": "325.99$",
+        "console": "PC",
+        "type": "console"
+    },
+    {
+        "id": 7,
         "src": "https://image.ceneostatic.pl/data/products/21078158/i-euro-truck-simulator-2-digital.jpg",
         "name": "Euro Truck simulator 2",
         "price": "33.99$",
