@@ -43,6 +43,7 @@ class SignIn extends Component{
           this.validate("#password","correct");
           this.showHideTooltip('visibleTooltip1',"hiddenTooltip1");
           validateFlag=true;
+          this.props.acChange("sign out",value.name);
         }
       });
       if(validateFlag==false){

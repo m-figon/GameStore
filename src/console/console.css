@@ -98,10 +98,14 @@
         width: 7rem;
 
     }
-}
-@media (max-width: 800px){
-    .product{
-        width: 5rem;
-
+    sign h1,
+    .price h1,
+    .product-sign h1{
+        font-size: 0.5rem;
+    }
+    .image img{
+        width: 3rem;
+        height: 3rem;
     }
 }
+

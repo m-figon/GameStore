@@ -9,11 +9,19 @@ class UpperBar extends Component{
             value: ""
         }
         this.imageClick = this.imageClick.bind(this);
+        this.imageClickSign = this.imageClickSign.bind(this);
         this.inputChange = this.inputChange.bind(this);
         this.searchByValue = this.searchByValue.bind(this);
     }
     imageClick(value){
-        this.props.platformHandler(value);
+            this.props.platformHandler(value);
+    }
+    imageClickSign(value){
+        if(this.props.operation=="sign in"){
+            this.props.platformHandler(value);
+        }else{
+            this.props.acChange("sign in","");
+        }
     }
     inputChange(event){
         this.setState({
@@ -40,7 +48,7 @@ class UpperBar extends Component{
                     </div>
                     <div id="login-cart">
                         <div id="registration" class="margin">
-                            <h1 onClick={()=>this.imageClick("signin")}>sign in </h1>
+                            <h1 onClick={()=>this.imageClickSign("signin")}>{this.props.logedName} {this.props.operation}</h1>
                             <h2>|</h2>
                             <h1 onClick={()=>this.imageClick("register")}>register</h1>
                         </div>

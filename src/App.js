@@ -18,13 +18,15 @@ class App extends Component{
     this.state={
         platform: "",
         cartNumber: 0,
-        items: []
+        items: [],
+        logedAc: "",
+       loginOperation: "sign in"
     };
     this.platformStateChanger = this.platformStateChanger.bind(this);
     this.commonReturn = this.commonReturn.bind(this);
     this.cartNumberUpdate = this.cartNumberUpdate.bind(this);
     this.cartDelete = this.cartDelete.bind(this);
-
+    this.accountUpdate = this.accountUpdate.bind(this);
   }
   platformStateChanger(variable){
     this.setState({
@@ -60,18 +62,24 @@ class App extends Component{
   commonReturn(jsonFile){
     return(
       <div className="App">
-        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
+        <UpperBar operation={this.state.loginOperation}logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger}/>
         <Console changeCartNumber={this.cartNumberUpdate} file={jsonFile}/>
       </div>
     );
+  }
+  accountUpdate(operation,name){
+    this.setState({
+      loginOperation: operation,
+      logedAc: name
+    })
   }
   render(){
     
     if(this.state.platform===""){
       return(
         <div className="App">
-        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
+        <UpperBar acChange={this.accountUpdate} operation={this.state.loginOperation}logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         <Ad/>
         </div>
@@ -90,16 +98,16 @@ class App extends Component{
     else if(this.state.platform==="signin"){
       return(
         <div className="App">
-        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
+        <UpperBar acChange={this.accountUpdate} operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
-        <SignIn/>
+        <SignIn acChange={this.accountUpdate}/>
         </div>
       );
     }
     else if(this.state.platform==="register"){
       return(
         <div className="App">
-        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
+        <UpperBar acChange={this.accountUpdate} operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         <Registration/>
         </div>
@@ -109,7 +117,7 @@ class App extends Component{
     else if(this.state.platform==="cart"){
       return(
         <div className="App">
-        <UpperBar number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
+        <UpperBar acChange={this.accountUpdate} operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger}/>
         <ChoiceBar platformHandler={this.platformStateChanger} name={this.state.platform}/>
         <Cart deleteHandler={this.cartDelete} array={this.state.items}/>
         </div>
