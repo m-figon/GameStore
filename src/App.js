@@ -11,18 +11,17 @@ import XBOX from './console/XBOX.json';
 import NINTENDO from './console/NINTENDO.json';
 import PC from './console/PC.json';
 import SignIn from './signin/signin';
-
+ import { Route } from 'react-router-dom';
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      platform: "",
       cartNumber: 0,
       items: [],
       logedAc: "",
-      loginOperation: "sign in"
+      loginOperation: "sign in",
+      linkDirection: "/Login"
     };
-    this.commonReturn = this.commonReturn.bind(this);
     this.cartNumberUpdate = this.cartNumberUpdate.bind(this);
     this.cartDelete = this.cartDelete.bind(this);
     this.setStateChange = this.setStateChange.bind(this);
@@ -60,51 +59,41 @@ class App extends Component {
     this.state.items.splice(obj, 1);
     //console.log(this.state.items);
   }
-  commonReturn(jsonFile) {
-    return (
-      <div className="App">
-        <UpperBar setStateHandler={this.setStateChange} operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger} />
-        <ChoiceBar setStateHandler={this.setStateChange} />
-        <Console setStateHandler={this.setStateChange} changeCartNumber={this.cartNumberUpdate} file={jsonFile} />
-      </div>
-    );
-  }
   render() {
     const MySubComponent = () => {
       return (
         <>
-          <UpperBar setStateHandler={this.setStateChange} operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger} />
+          <UpperBar setStateHandler={this.setStateChange} direction={this.state.linkDirection}  operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger} />
           <ChoiceBar setStateHandler={this.setStateChange} name={this.state.platform} />
         </>
       );
     }
-    if (this.state.platform === "") {
+    const HomeComponent = () => {
       return (
         <div className="App">
           <MySubComponent />
           <Ad />
         </div>
-
       );
-    } else if (this.state.platform === "PS") {
-      return (this.commonReturn(PS));
     }
-    else if (this.state.platform === "XBOX") {
-      return (this.commonReturn(XBOX));
-    } else if (this.state.platform === "NINTENDO") {
-      return (this.commonReturn(NINTENDO));
-    } else if (this.state.platform === "PC") {
-      return (this.commonReturn(PC));
+    const PlatformComponent = (props) => {
+      return (
+        <div className="App">
+        <UpperBar setStateHandler={this.setStateChange} direction={this.state.linkDirection} operation={this.state.loginOperation} logedName={this.state.logedAc} number={this.state.cartNumber} platformHandler={this.platformStateChanger} />
+        <ChoiceBar setStateHandler={this.setStateChange} />
+        <Console setStateHandler={this.setStateChange} changeCartNumber={this.cartNumberUpdate} file={props.jsonFile} />
+      </div>
+      );
     }
-    else if (this.state.platform === "signin") {
+    const LoginComponent = () => {
       return (
         <div className="App">
           <MySubComponent />
-          <SignIn setStateHandler={this.setStateChange} />
+          <SignIn setStateHandler={this.setStateChange}/>
         </div>
       );
     }
-    else if (this.state.platform === "register") {
+    const RegisterComponent = () => {
       return (
         <div className="App">
           <MySubComponent />
@@ -112,7 +101,7 @@ class App extends Component {
         </div>
       );
     }
-    else if (this.state.platform === "cart") {
+    const CartComponent = () => {
       return (
         <div className="App">
           <MySubComponent />
@@ -120,6 +109,23 @@ class App extends Component {
         </div>
       );
     }
+      
+      return(
+        <>
+        <Route exact path="/" component={HomeComponent}/>
+        <Route exact path="/PS" component={() => <PlatformComponent jsonFile={PS}/>}/>
+        <Route exact path="/XBOX" component={() => <PlatformComponent jsonFile={XBOX}/>}/>
+        <Route exact path="/NINTENDO" component={() => <PlatformComponent jsonFile={NINTENDO}/>}/>
+        <Route exact path="/PC" component={() => <PlatformComponent jsonFile={PC}/>}/>
+        <Route exact path="/Login" component={LoginComponent}/>
+        <Route exact path="/Register" component={RegisterComponent}/>
+        <Route exact path="/Cart" component={CartComponent}/>
+        </>
+      );
+        
+    
+      
+    
   }
 
 }

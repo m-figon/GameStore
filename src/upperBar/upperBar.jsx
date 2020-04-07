@@ -2,21 +2,19 @@ import React, { Component } from 'react';
 import './upperBar.css';
 import logo from '../logo.svg';
 import search from './search.png';
+import { Link } from 'react-router-dom';
 class UpperBar extends Component {
     constructor() {
         super();
         this.state = {
-            value: ""
+            value: "",
         }
-    }
-    imageClick(value) {
-        this.props.setStateHandler("platform", value);
     }
     imageClickSign(value) {
         if (this.props.operation === "sign in") {
-            this.props.setStateHandler("platform", value);
+
         } else {
-            this.props.setStateHandler("loginOperation", "sign in", "logedAc", "");
+            
         }
 
     }
@@ -26,12 +24,24 @@ class UpperBar extends Component {
         })
     }
     render() {
+        const SigningComponent = () => {
+            if(this.props.operation==="sign in"){
+                return (
+                    <Link to={this.props.direction}><h1>{this.props.logedName} {this.props.operation}</h1></Link>
+                  );
+            }else{
+                return(
+                <h1 onClick={()=>this.props.setStateHandler("loginOperation", "sign in", "logedAc", "")}>{this.props.logedName} {this.props.operation}</h1>
+                );
+            }
+            
+          }
         return (
             <div class="upper-bar">
                 <div class="bar">
                     <div id="img-search">
                         <div class="logo">
-                            <img src={logo} onClick={() => this.imageClick("")} className="App-logo" alt="logo" />
+                            <Link to=''><img src={logo} className="App-logo" alt="logo" /></Link>
                         </div>
                         <div class="margin">
                             <form class="form">
@@ -42,13 +52,13 @@ class UpperBar extends Component {
                     </div>
                     <div id="login-cart">
                         <div id="registration" class="margin">
-                            <h1 onClick={() => this.imageClickSign("signin")}>{this.props.logedName} {this.props.operation}</h1>
+                                <SigningComponent/>
                             <h2>|</h2>
-                            <h1 onClick={() => this.imageClick("register")}>register</h1>
+                            <Link to='/Register'><h1>register</h1></Link>
                         </div>
                         <div class="margin-right">
                             <h1 id='products-counter'>{this.props.number}</h1>
-                            <img onClick={() => this.imageClick("cart")} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt=""/>
+                            <Link to="/Cart"><img src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt=""/></Link>
                         </div>
                     </div>
                 </div>

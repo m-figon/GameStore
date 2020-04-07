@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './choiceBar.css';
+import { Link } from 'react-router-dom';
 class ChoiceBar extends Component {
     constructor() {
         super();
@@ -40,7 +41,6 @@ class ChoiceBar extends Component {
                 idPC: "selected"
             });
         }
-        this.props.setStateHandler("platform", variable);
     }
     componentDidMount() {
         setInterval(() => {
@@ -58,10 +58,10 @@ class ChoiceBar extends Component {
         return (
             <div class="choice-bar">
                 <div class="platforms">
-                    <h1 id={this.state.idPS} onClick={() => this.changeClass("PS")}>PLAYSTATION</h1>
-                    <h1 id={this.state.idXBOX} onClick={() => this.changeClass("XBOX")} >XBOX</h1>
-                    <h1 id={this.state.idNINTENDO} onClick={() => this.changeClass("NINTENDO")} >NINTENDO</h1>
-                    <h1 id={this.state.idPC} onClick={() => this.changeClass("PC")} >PC</h1>
+                    <Link to='/PS'><h1 id={this.state.idPS} onClick={() => this.changeClass("PS")}>PLAYSTATION</h1></Link>
+                    <Link to='/XBOX'><h1 id={this.state.idXBOX} onClick={() => this.changeClass("XBOX")} >XBOX</h1></Link>
+                    <Link to='/NINTENDO'><h1 id={this.state.idNINTENDO} onClick={() => this.changeClass("NINTENDO")} >NINTENDO</h1></Link>
+                    <Link to='/PC'><h1 id={this.state.idPC} onClick={() => this.changeClass("PC")} >PC</h1></Link>
                 </div>
             </div>
         );
