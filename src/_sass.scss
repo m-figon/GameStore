@@ -1,0 +1,10 @@
+$colors: (font: #2e2e2e, bg: #30a189);
+@mixin flexbox($content){
+    display: flex;
+    align-items: center;
+    justify-content: $content;
+}
+@mixin width-height($width, $height){
+    width: $width;
+    height: $height;
+}

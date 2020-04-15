@@ -1,0 +1,32 @@
+@import '../_sass.scss';
+
+.choice-bar{
+    width: 100%;
+    @include flexbox(center);
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    border: solid 2px black;
+}
+.platforms{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width:60%;
+    h1{
+        color: map-get($colors,font);
+        font-size: 1.7rem;
+        font-family: 'PT Sans', sans-serif;
+        @media (max-width: 1000px){
+                font-size: 1.2rem;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+#selected
+{
+    color: map-get($colors,bg);
+}

@@ -1,34 +1,37 @@
-.choice-bar{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    position: relative;
-    z-index: 1;
-    border: solid 2px black;
+.choice-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  border: solid 2px black;
 }
-.platforms{
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    width:60%;
+
+.platforms {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 60%;
 }
-.platforms h1{
-    color: #2e2e2e;
-    font-size: 1.7rem;
-    font-family: 'PT Sans', sans-serif;
+.platforms h1 {
+  color: #2e2e2e;
+  font-size: 1.7rem;
+  font-family: "PT Sans", sans-serif;
 }
-.platforms h1:hover{
-    cursor: pointer;
-    text-decoration: underline;
+@media (max-width: 1000px) {
+  .platforms h1 {
+    font-size: 1.2rem;
+  }
 }
-#selected
-{
-    color: #30a189;
+.platforms:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
-@media (max-width: 1000px){
-    .platforms h1{
-        font-size: 1.2rem;
-    }
+
+#selected {
+  color: #30a189;
 }
+
+/*# sourceMappingURL=choiceBar.css.map */

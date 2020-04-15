@@ -140,6 +140,7 @@ class Registration extends Component {
       <div class="registration">
         <div class="app-form">
           <form id="form">
+            
             <div class="one-line">
               <div class="left">
                 <h1>e-mail adress</h1>

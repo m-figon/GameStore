@@ -1,0 +1,93 @@
+@import '../_sass.scss';
+
+.upper-bar{
+    width: 100%;
+    @include flexbox(center);
+    background-color: #2e2e2e;
+    position: relative;
+    z-index: 1;
+}
+.bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2e2e2e;
+    width:60%;
+}
+img{
+    @include width-height(100px, 100px);
+}
+.logo {
+    img{
+        &:hover{
+            cursor: pointer;
+        }
+        
+    }
+}
+#login-cart img{
+    @include width-height(50px, 50px);
+}
+.form img{
+    @include width-height(10px, 10px);
+}
+#img-search,
+#login-cart{
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+.margin,
+.logo,
+.margin-right{
+    margin-right: 50px;
+}
+.input input{
+    @include width-height(18px, 20px);
+}
+#img-id{
+    float: right;
+}
+h1,h2{
+    margin-left: 10px;
+    display: inline-block;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    font-family: 'PT Sans', sans-serif;
+}
+button{
+    background-color: #30a189;
+}
+#registration h1:hover{
+    text-shadow: 0.2px 0.2px 2px white;
+    cursor: pointer;
+}
+#products-counter{
+    position: absolute;
+    top:0rem;
+    margin-left: 2.5rem;
+}
+.margin-right img:hover{
+    cursor: pointer;
+}
+@media (max-width: 1550px){
+    .bar{
+        width:100%;
+    }
+    h1,h2{
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 900px){
+    h1,h2{
+        font-size: 1rem;
+        margin-left: 0px;
+    }
+    .margin-right{
+        margin-right: 0px;
+    }
+    #products-counter{
+        position: absolute;
+        top:1rem;
+        margin-left: 2.5rem;
+    }
+}

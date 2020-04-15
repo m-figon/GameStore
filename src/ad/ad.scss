@@ -1,0 +1,62 @@
+@import '../_sass.scss';
+
+.big-ad{
+    @include width-height(100%, 82%);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    z-index: 0;
+
+}
+.ad{ 
+    position: relative;
+    padding: 0;
+    @include width-height(100%, 101%);
+    animation: 20s slidy infinite;
+    img{
+        @include width-height(101%, 100%);
+    }
+}
+
+.discount h1{
+    position: absolute;
+    transform: rotateZ(-35deg);
+    margin:{
+        left: -110%;
+        top: 0%;
+    }
+    padding-right: 20%;
+    width: 30%;
+    background-color: rgba(48, 161, 137,0.8);
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+    font-size: 5rem;
+}
+@keyframes slidy{
+    23%{
+        top: 0;
+    }
+    25%{
+        top: -103%;
+    }
+    48%{
+        top: -103%;
+    }
+    50%{
+        top: -206%;
+    }
+    73%{
+        top: -206%;
+    }
+    75%{
+        top: -309%;
+    }
+    98%{
+        top: -309%;
+    }
+    100%{
+        top: 0%;
+    }
+    
+}
