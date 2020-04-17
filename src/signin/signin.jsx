@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import accounts from './accounts.json';
 import '../registration/registration.css';
 
 
@@ -33,7 +32,7 @@ class SignIn extends Component {
   }
   displayData() {
     let validateFlag = false;
-    accounts.map((value) => {
+    this.props.accounts.map((value) => {
       //console.log(value.name);
       //console.log(this.state.account);
       if (this.state.account === value.name && this.state.password1 === value.password) {

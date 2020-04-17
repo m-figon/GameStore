@@ -6,10 +6,6 @@ import Ad from './ad/ad';
 import Registration from './registration/registration';
 import Console from './console/console';
 import Cart from './cart/cart';
-import PS from './console/PS.json';
-import XBOX from './console/XBOX.json';
-import NINTENDO from './console/NINTENDO.json';
-import PC from './console/PC.json';
 import SignIn from './signin/signin';
  import { Route } from 'react-router-dom';
 class App extends Component {
@@ -20,11 +16,33 @@ class App extends Component {
       items: [],
       logedAc: "",
       loginOperation: "sign in",
-      linkDirection: "/Login"
+      linkDirection: "/Login",
+      accounts: [],
+      PS: [],
+      XBOX: [],
+      PC: [],
+      NINTENDO: []
     };
     this.cartNumberUpdate = this.cartNumberUpdate.bind(this);
     this.cartDelete = this.cartDelete.bind(this);
     this.setStateChange = this.setStateChange.bind(this);
+  }
+  jsonFetch(http,array){
+    fetch(http)
+    .then(response => response.json())
+    .then(json => {
+      this.setState({
+        [array]: json
+      });
+    })
+  }
+  componentDidMount() {
+    this.jsonFetch('http://localhost:3001/accounts','accounts');
+    this.jsonFetch('http://localhost:3001/PS','PS');
+    this.jsonFetch('http://localhost:3001/XBOX','XBOX');
+    this.jsonFetch('http://localhost:3001/PC','PC');
+    this.jsonFetch('http://localhost:3001/NINTENDO','NINTENDO');
+
   }
   setStateChange(type1, value1, type2, value2, type3, value3) {
     this.setState({
@@ -39,16 +57,16 @@ class App extends Component {
     });
     if (consoleType === "PS") {
       //console.log(PS[id]);
-      this.state.items.push(PS[id])
+      this.state.items.push(this.state.PS[id])
     } else if (consoleType === "XBOX") {
       //console.log(XBOX[id]);
-      this.state.items.push(XBOX[id])
+      this.state.items.push(this.state.XBOX[id])
     } else if (consoleType === "NINTENDO") {
       //console.log(NINTENDO[id]);
-      this.state.items.push(NINTENDO[id])
+      this.state.items.push(this.state.NINTENDO[id])
     } else if (consoleType === "PC") {
       //console.log(PC[id]);
-      this.state.items.push(PC[id])
+      this.state.items.push(this.state.PC[id])
     }
     //console.log(this.state.items);
   }
@@ -89,7 +107,7 @@ class App extends Component {
       return (
         <div className="App">
           <MySubComponent />
-          <SignIn setStateHandler={this.setStateChange}/>
+          <SignIn accounts={this.state.accounts} setStateHandler={this.setStateChange}/>
         </div>
       );
     }
@@ -113,10 +131,10 @@ class App extends Component {
       return(
         <>
         <Route exact path="/" component={HomeComponent}/>
-        <Route exact path="/PS" component={() => <PlatformComponent jsonFile={PS}/>}/>
-        <Route exact path="/XBOX" component={() => <PlatformComponent jsonFile={XBOX}/>}/>
-        <Route exact path="/NINTENDO" component={() => <PlatformComponent jsonFile={NINTENDO}/>}/>
-        <Route exact path="/PC" component={() => <PlatformComponent jsonFile={PC}/>}/>
+        <Route exact path="/PS" component={() => <PlatformComponent jsonFile={this.state.PS}/>}/>
+        <Route exact path="/XBOX" component={() => <PlatformComponent jsonFile={this.state.XBOX}/>}/>
+        <Route exact path="/NINTENDO" component={() => <PlatformComponent jsonFile={this.state.NINTENDO}/>}/>
+        <Route exact path="/PC" component={() => <PlatformComponent jsonFile={this.state.PC}/>}/>
         <Route exact path="/Login" component={LoginComponent}/>
         <Route exact path="/Register" component={RegisterComponent}/>
         <Route exact path="/Cart" component={CartComponent}/>
