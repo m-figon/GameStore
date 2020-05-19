@@ -6,6 +6,14 @@
   justify-content: center;
 }
 
+.one-line {
+  margin-bottom: -1rem;
+}
+
+#login .one-line {
+  margin-bottom: 0.5rem;
+}
+
 .app-form {
   padding: 2rem;
   flex-direction: column;
@@ -14,14 +22,14 @@
   justify-content: center;
   background-color: #6d6d6d;
   width: 40%;
-  height: 35rem;
+  height: 25rem;
   border-radius: 10px;
 }
 .app-form h1 {
   display: inline-block;
   color: #c4c4c4;
   font-size: 1.5rem;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 @media (max-width: 970px) {
   .app-form h1 {
@@ -32,18 +40,19 @@
   margin: 2rem 0;
   background-color: #4a4a4a;
   color: #cacaca;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.2rem;
   border: 1px solid black;
   border-radius: 5px;
 }
 .app-form button:hover {
   cursor: pointer;
+  background-color: #575757;
 }
 .app-form input,
 .app-form select {
   padding: 0.2rem 0.2rem;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   height: 1.5rem;
   width: 90%;
   color: #383838;
@@ -122,7 +131,7 @@
   padding: 0.2rem 0.5rem;
   background-color: #30a189;
   color: #cacaca;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.6rem;
   border-radius: 5px;
 }

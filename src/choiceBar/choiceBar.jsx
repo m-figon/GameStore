@@ -52,6 +52,15 @@ class ChoiceBar extends Component {
                     idPC: ""
                 });
             }
+            if(window.location.href.includes("XBOX")){
+                this.changeClass("XBOX");
+            }else if(window.location.href.includes("PS")){
+                this.changeClass("PS");
+            }else if(window.location.href.includes("NINTENDO")){
+                this.changeClass("NINTENDO");
+            }else if(window.location.href.includes("PC")){
+                this.changeClass("PC");
+            }
         }, 500);
     }
     render() {
