@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import '../registration/registration.css';
-
+import visible from './visibility.png';
+import invisible from './invisibility.png';
 
 class SignIn extends Component {
   constructor() {
@@ -9,7 +10,8 @@ class SignIn extends Component {
     this.state = {
       account: "",
       password1: "",
-      type: "password"
+      type: "password",
+      img: <img id="eye" src={visible}></img>
     }
   }
   inputChange(type, event) {
@@ -70,7 +72,13 @@ class SignIn extends Component {
     }
   }
   render() {
-
+    let visibleSrc;
+    if(this.state.type==="password"){
+      visibleSrc= <img id="eye" src={visible}></img>;
+    }
+    else if(this.state.type==="text"){
+      visibleSrc= <img id="eye" src={invisible}></img>;
+    }
     return (
       <div class="registration">
         <div id="login" class="app-form">
@@ -80,7 +88,7 @@ class SignIn extends Component {
                 <h1>account name</h1>
               </div>
               <div class="right">
-                <input id="ac-name" onChange={(e) => this.inputChange("account", e)} type="text" value={this.state.account} />
+                <input autocomplete="off" id="ac-name" onChange={(e) => this.inputChange("account", e)} type="text" value={this.state.account} />
                 <div id="hiddenTooltip1">Please enter correct account name and password</div>
               </div>
             </div>
@@ -89,10 +97,10 @@ class SignIn extends Component {
                 <h1>password</h1>
               </div>
               <div class="right">
-                <input id="password" onChange={(e) => this.inputChange("password1", e)} type={this.state.type} value={this.state.password1} />
+                <input autocomplete="off" id="password" onChange={(e) => this.inputChange("password1", e)} type={this.state.type} value={this.state.password1} />
               </div>
             </div>
-            <button type="button" id="show" onClick={() => this.passwordHideShow()}>SHOW</button>
+            <button type="button" id="show" onClick={() => this.passwordHideShow()}>{visibleSrc}</button>
 
           </form>
 

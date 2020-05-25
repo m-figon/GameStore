@@ -6,6 +6,7 @@ html,body,.App,#root{
     font-family: 'Lato', sans-serif;
 }
 input:focus,
-select:focus{
+select:focus,
+button:focus{
     outline: none;
 }

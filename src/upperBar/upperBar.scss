@@ -3,14 +3,13 @@
 .upper-bar{
     width: 100%;
     @include flexbox(center);
-    background-color: #2e2e2e;
+    background: url('../bg.jpg');
     position: relative;
     z-index: 1;
 }
 .bar{
     display: flex;
     justify-content: space-between;
-    background-color: #2e2e2e;
     width:60%;
 }
 img{
@@ -41,6 +40,19 @@ img{
 .margin-right{
     margin-right: 50px;
 }
+.logo{
+    display: flex;
+    align-items: center;
+  }
+  .logo img:hover{
+    filter: opacity(0.9)
+  }
+  .logo h2{
+    text-shadow: 0.2px 0.2px 2px white;
+  }
+  .logo h2:hover{
+    color: rgba(255, 255, 255, 0.534);
+  }
 .margin-right img:hover{
         filter: opacity(90%);
 }
@@ -73,9 +85,7 @@ button{
     cursor: pointer;
 }
 @media (max-width: 1550px){
-    .bar{
-        width:100%;
-    }
+
     h1,h2{
         font-size: 1.3rem;
     }

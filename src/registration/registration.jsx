@@ -146,7 +146,7 @@ class Registration extends Component {
                 <h1>e-mail adress</h1>
               </div>
               <div class="right">
-                <input id="email" onFocus={() => this.showHideTooltip("hiddenTooltip1", 'visibleTooltip1')} onBlur={() => this.showHideTooltip("visibleTooltip1", 'hiddenTooltip1')} onChange={(e) => this.inputChange("email", e)} type="text" value={this.state.email} /><div id="hiddenTooltip1">Please enter correct email adress</div>
+                <input autocomplete="off" id="email" onFocus={() => this.showHideTooltip("hiddenTooltip1", 'visibleTooltip1')} onBlur={() => this.showHideTooltip("visibleTooltip1", 'hiddenTooltip1')} onChange={(e) => this.inputChange("email", e)} type="text" value={this.state.email} /><div id="hiddenTooltip1">Please enter correct email adress</div>
               </div>
             </div>
             <div class="one-line">
@@ -154,7 +154,7 @@ class Registration extends Component {
                 <h1>account name</h1>
               </div>
               <div class="right">
-                <input id="ac-name" onFocus={() => this.showHideTooltip("hiddenTooltip2", 'visibleTooltip2')} onBlur={() => this.showHideTooltip("visibleTooltip2", 'hiddenTooltip2')} onChange={(e) => this.inputChange("account", e)} type="text" value={this.state.account} /><div id="hiddenTooltip2">Username must consist of 4-10 characters which are either digits, letters or -_.</div>
+                <input autocomplete="off" id="ac-name" onFocus={() => this.showHideTooltip("hiddenTooltip2", 'visibleTooltip2')} onBlur={() => this.showHideTooltip("visibleTooltip2", 'hiddenTooltip2')} onChange={(e) => this.inputChange("account", e)} type="text" value={this.state.account} /><div id="hiddenTooltip2">Username must consist of 4-10 characters which are either digits, letters or -_.</div>
               </div>
             </div>
             <div class="one-line">
@@ -162,7 +162,7 @@ class Registration extends Component {
                 <h1>password</h1>
               </div>
               <div class="right">
-                <input id="password" onFocus={() => this.showHideTooltip("hiddenTooltip3", 'visibleTooltip3')} onBlur={() => this.showHideTooltip("visibleTooltip3", 'hiddenTooltip3')} onChange={(e) => this.inputChange("password1", e)} type="text" value={this.state.password1} /><div id="hiddenTooltip3">Password must consist of 8-13 letters, cointain: one upper and lower case letter, one digit, one special character</div>
+                <input autocomplete="off" type="password" id="password" onFocus={() => this.showHideTooltip("hiddenTooltip3", 'visibleTooltip3')} onBlur={() => this.showHideTooltip("visibleTooltip3", 'hiddenTooltip3')} onChange={(e) => this.inputChange("password1", e)} value={this.state.password1} /><div id="hiddenTooltip3">Password must consist of 8-13 letters, cointain: one upper and lower case letter, one digit, one special character</div>
 
               </div>
             </div>
@@ -171,7 +171,7 @@ class Registration extends Component {
                 <h1>confirm password</h1>
               </div>
               <div class="right">
-                <input id="confirm-password" onFocus={() => this.showHideTooltip("hiddenTooltip4", 'visibleTooltip4')} onBlur={() => this.showHideTooltip("visibleTooltip4", 'hiddenTooltip4')} onChange={(e) => this.inputChange("password2", e)} type="text" value={this.state.password2} /><div id="hiddenTooltip4">This field must match your password</div>
+                <input autocomplete="off" type="password" id="confirm-password" onFocus={() => this.showHideTooltip("hiddenTooltip4", 'visibleTooltip4')} onBlur={() => this.showHideTooltip("visibleTooltip4", 'hiddenTooltip4')} onChange={(e) => this.inputChange("password2", e)} value={this.state.password2} /><div id="hiddenTooltip4">This field must match your password</div>
               </div>
             </div>
             <div class="one-line">

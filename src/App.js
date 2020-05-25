@@ -37,11 +37,11 @@ class App extends Component {
     })
   }
   componentDidMount() {
-    this.jsonFetch('http://localhost:3001/accounts','accounts');
-    this.jsonFetch('http://localhost:3001/PS','PS');
-    this.jsonFetch('http://localhost:3001/XBOX','XBOX');
-    this.jsonFetch('http://localhost:3001/PC','PC');
-    this.jsonFetch('http://localhost:3001/NINTENDO','NINTENDO');
+    this.jsonFetch('http://www.mocky.io/v2/5ec983163000000d00a6cdf9','accounts');
+    this.jsonFetch('http://www.mocky.io/v2/5ec983543000007900a6cdfb','PS');
+    this.jsonFetch('http://www.mocky.io/v2/5ec9836c3000006300a6cdfc','XBOX');
+    this.jsonFetch('http://www.mocky.io/v2/5ec983383000009700a6cdfa','PC');
+    this.jsonFetch('http://www.mocky.io/v2/5ec982cf3000009700a6cdf8','NINTENDO');
 
   }
   setStateChange(type1, value1, type2, value2, type3, value3) {

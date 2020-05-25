@@ -15,7 +15,7 @@
     padding: 2rem;
     flex-direction: column;
     @include flexbox(center);
-    background-color: #6d6d6d;
+    background: url('../bg.jpg');
     @include width-height(40%, 25rem);
     border-radius: 10px;
     h1 {
@@ -143,9 +143,16 @@
         left: 31%;
         top: -2.6rem;
     }
-    @include width-height(4%, 4%);
+    @include width-height(2.5rem, 2rem);
     font-size: 0.7rem;
     @media (max-width: 970px) {
         font-size: 0.5rem;
     }
+}
+#eye{
+    width:90%;
+    height: 90%;
+}
+.registration input{
+    border: 1px solid black;
 }

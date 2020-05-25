@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './upperBar.css';
-import logo from '../logo.svg';
+import logo from './logo.png';
 import search from './search.png';
 import { Link } from 'react-router-dom';
 class UpperBar extends Component {
@@ -42,12 +42,7 @@ class UpperBar extends Component {
                     <div id="img-search">
                         <div class="logo">
                             <Link to=''><img src={logo} className="App-logo" alt="logo" /></Link>
-                        </div>
-                        <div class="margin">
-                            <form class="form">
-                                <input type='text' onChange={(e) => this.inputChange(e)} value={this.state.value} />
-                                <button type="button"><img src={search} alt=""/></button>
-                            </form>
+                            <Link to=''><h2>GameStore</h2></Link>
                         </div>
                     </div>
                     <div id="login-cart">

@@ -8,7 +8,9 @@
 .section-console {
   padding: 1rem 1rem;
   width: 60%;
-  background-color: #dcf4ef;
+  background: url('../bg.jpg');
+  background-size: 100% 100%;
+  border-radius: 5px;
 }
 
 .select-section {

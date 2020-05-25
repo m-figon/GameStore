@@ -8,10 +8,11 @@
 .section-cart{
     padding: 1rem 1rem;
     width: 60%;
-    background-color: lighten(map-get($colors,bg),50%);
+    background: url('../bg.jpg');
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
 }
 #inside-cart-sign{
     font-size: 3rem;
