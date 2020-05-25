@@ -16,6 +16,7 @@
     flex-direction: column;
     @include flexbox(center);
     background: url('../bg.jpg');
+    background-size: 100% 100%;
     @include width-height(40%, 25rem);
     border-radius: 10px;
     h1 {
@@ -141,7 +142,7 @@
     position: absolute;
     margin: {
         left: 31%;
-        top: -2.6rem;
+        top: -2.9rem;
     }
     @include width-height(2.5rem, 2rem);
     font-size: 0.7rem;
@@ -152,7 +153,5 @@
 #eye{
     width:90%;
     height: 90%;
-}
-.registration input{
-    border: 1px solid black;
+    filter: brightness(0) invert(1);
 }

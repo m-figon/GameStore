@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../bg.jpg');
+  background: url("../bg.jpg");
   position: relative;
   z-index: 1;
 }
@@ -46,6 +46,23 @@ img {
   margin-right: 50px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img:hover {
+  filter: opacity(0.9);
+}
+
+.logo h2 {
+  text-shadow: 0.2px 0.2px 2px white;
+}
+
+.logo h2:hover {
+  color: rgba(255, 255, 255, 0.534);
+}
+
 .margin-right img:hover {
   filter: opacity(90%);
 }
@@ -59,7 +76,8 @@ img {
   float: right;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-left: 10px;
   display: inline-block;
   color: #f5f5f5;
@@ -75,19 +93,7 @@ button {
   text-shadow: 0.2px 0.2px 2px white;
   cursor: pointer;
 }
-.logo{
-  display: flex;
-  align-items: center;
-}
-.logo img:hover{
-  filter: opacity(0.9)
-}
-.logo h2{
-  text-shadow: 0.2px 0.2px 2px white;
-}
-.logo h2:hover{
-  color: rgba(255, 255, 255, 0.534);
-}
+
 #products-counter {
   position: absolute;
   top: 0rem;
@@ -99,14 +105,14 @@ button {
 }
 
 @media (max-width: 1550px) {
-
-
-  h1, h2 {
+  h1,
+h2 {
     font-size: 1.3rem;
   }
 }
 @media (max-width: 900px) {
-  h1, h2 {
+  h1,
+h2 {
     font-size: 1rem;
     margin-left: 0px;
   }
@@ -119,6 +125,16 @@ button {
     position: absolute;
     top: 1rem;
     margin-left: 2.5rem;
+  }
+}
+@media (max-width: 1100px) {
+  .bar {
+    width: 100%;
+  }
+
+  .logo img {
+    margin-left: 4rem;
+    margin-right: 2rem;
   }
 }
 

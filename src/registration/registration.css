@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../bg.jpg');
+  background: url("../bg.jpg");
   background-size: 100% 100%;
   width: 40%;
   height: 25rem;
@@ -39,7 +39,7 @@
 }
 .app-form button {
   margin: 2rem 0;
-  background-color: #adadad7a;
+  background-color: #4a4a4a;
   color: #cacaca;
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
@@ -48,7 +48,7 @@
 }
 .app-form button:hover {
   cursor: pointer;
-  background-color: #d3d2d27a;
+  background-color: #575757;
 }
 .app-form input,
 .app-form select {
@@ -100,11 +100,11 @@
 }
 
 .correct {
-  border: #00ca33 solid 1px;
+  border: #00ca33 solid 2px;
 }
 
 .incorrect {
-  border: #c70202 solid 1px;
+  border: #c70202 solid 2px;
 }
 
 #submit {
@@ -179,13 +179,11 @@
     font-size: 0.5rem;
   }
 }
-.registration input,
-.registration select{
-  border: 1px solid black;
-}
-#eye{
-  width:90%;
+
+#eye {
+  width: 90%;
   height: 90%;
-  filter: opacity(0.5);
+  filter: brightness(0) invert(1);
 }
+
 /*# sourceMappingURL=registration.css.map */
