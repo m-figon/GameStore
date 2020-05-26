@@ -76,10 +76,6 @@
 .sign:hover {
     cursor: pointer;
 }
-.center-products{
-    display: flex;
-    justify-content: center;
-}
 .products {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -87,11 +83,7 @@
 .product {
     background-color: white;
     border: 1px solid rgba(#000000, 0.4);
-    margin: 1.5rem 0;
-    margin:{
-        left: 10%;
-        right: 10%;
-    }
+    margin: 1.5rem 1rem;
     border-radius: 10px;
     width: 20rem;
 }
@@ -141,17 +133,23 @@
 @media (max-width: 600px) {
     .product {
         margin:{
-            left: 5%;
-            right: 5%;
+            left: 0.5rem;
+            right: 0.5rem;
         }
     }
 }
 @media (max-width: 500px) {
     .product {
         margin:{
-            left: 2%;
-            right: 2%;
+            left: 0.2rem;
+            right: 0.2rem;
         }
     }
+    .section-console{
+        width: 90%;
+    }
 }
-
+.center-products{
+    display: flex;
+    justify-content: center;
+}

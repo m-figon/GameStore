@@ -8,6 +8,11 @@ import Console from './console/console';
 import Cart from './cart/cart';
 import SignIn from './signin/signin';
  import { Route } from 'react-router-dom';
+ import ac from './accounts.json';
+ import ps from './PS.json';
+ import pc from './PC.json';
+ import xbox from './XBOX.json';
+ import nintendo from './NINTENDO.json';
 class App extends Component {
   constructor() {
     super();
@@ -17,11 +22,11 @@ class App extends Component {
       logedAc: "",
       loginOperation: "sign in",
       linkDirection: "/Login",
-      accounts: [],
-      PS: [],
-      XBOX: [],
-      PC: [],
-      NINTENDO: []
+      accounts: ac,
+      PS: ps,
+      XBOX: xbox,
+      PC: pc,
+      NINTENDO: nintendo
     };
     this.cartNumberUpdate = this.cartNumberUpdate.bind(this);
     this.cartDelete = this.cartDelete.bind(this);
@@ -37,12 +42,13 @@ class App extends Component {
     })
   }
   componentDidMount() {
+    /*
     this.jsonFetch('http://www.mocky.io/v2/5ec983163000000d00a6cdf9','accounts');
     this.jsonFetch('http://www.mocky.io/v2/5ec983543000007900a6cdfb','PS');
     this.jsonFetch('http://www.mocky.io/v2/5ec9836c3000006300a6cdfc','XBOX');
     this.jsonFetch('http://www.mocky.io/v2/5ec983383000009700a6cdfa','PC');
     this.jsonFetch('http://www.mocky.io/v2/5ec982cf3000009700a6cdf8','NINTENDO');
-
+    */
   }
   setStateChange(type1, value1, type2, value2, type3, value3) {
     this.setState({

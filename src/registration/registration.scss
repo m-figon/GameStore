@@ -3,7 +3,9 @@
 .registration {
     height: 80%;
     flex-direction: row;
-    @include flexbox(center);
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
 }
 .one-line{
     margin-bottom: -1rem;
