@@ -46,7 +46,7 @@ class UpperBar extends Component {
                         </div>
                     </div>
                     <div id="login-cart">
-                        <div id="registration" class="margin">
+                        <div id="registration" class="margin-right">
                                 <SigningComponent/>
                             <h2>|</h2>
                             <Link to='/Register'><h1>register</h1></Link>

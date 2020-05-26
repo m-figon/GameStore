@@ -37,7 +37,7 @@ img {
 .margin,
 .logo,
 .margin-right {
-    margin-right: 50px;
+    margin-right: 20px;
 }
 .logo {
     display: flex;
@@ -85,6 +85,11 @@ button {
     cursor: pointer;
 }
 @media (max-width: 1550px) {
+    .margin,
+    .logo,
+    .margin-right {
+        margin-right: 0px;
+    }
     h1,
     h2 {
         font-size: 1.3rem;
@@ -112,5 +117,14 @@ button {
     .logo img {
         margin-left: 4rem;
         margin-right: 2rem;
+    }
+}
+@media (max-width: 600px) {
+    .logo img {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    #login-cart {
+        justify-content: center;
     }
 }

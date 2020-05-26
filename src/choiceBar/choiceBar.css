@@ -15,6 +15,11 @@
   background-color: white;
   width: 60%;
 }
+@media (max-width: 600px) {
+  .platforms {
+    width: 90%;
+  }
+}
 .platforms h1 {
   color: #2e2e2e;
   font-size: 1.7rem;

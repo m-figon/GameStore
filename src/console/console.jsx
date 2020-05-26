@@ -20,7 +20,7 @@ class Console extends Component {
                     <div class="product">
                         <div class="product-sign">
                             <h1 key={game.id}>{game.name}</h1>
-                            <img id='cart' onClick={() => this.props.changeCartNumber(game.console, game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt=""/>
+                            <img id='cart' onClick={() => this.props.changeCartNumber(game.console, game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt="" />
                         </div>
                         <div class="image">
                             <img key={game.id} src={game.src} alt="" />
@@ -34,7 +34,7 @@ class Console extends Component {
                     <div class="product">
                         <div class="product-sign">
                             <h1 key={game.id}>{game.name}</h1>
-                            <img id='cart' onClick={() => this.props.changeCartNumber(game.console, game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt=""/>
+                            <img id='cart' onClick={() => this.props.changeCartNumber(game.console, game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt="" />
                         </div>
                         <div class="image">
                             <img key={game.id} src={game.src} alt="" />
@@ -49,7 +49,7 @@ class Console extends Component {
                     <div class="product">
                         <div class="product-sign">
                             <h1 key={game.id}>{game.name}</h1>
-                            <img id='cart' onClick={() => this.props.changeCartNumber(game.console, game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt=""/>
+                            <img id='cart' onClick={() => this.props.changeCartNumber(game.console, game.id)} src="https://img.icons8.com/color/48/000000/shopping-cart.png" alt="" />
                         </div>
                         <div class="image">
                             <img key={game.id} src={game.src} alt="" />
@@ -75,8 +75,10 @@ class Console extends Component {
                             <h1 >GAMES</h1>
                         </div>
                     </div>
-                    <div class="products">
-                        {display}
+                    <div className="center-products">
+                        <div class="products">
+                            {display}
+                        </div>
                     </div>
                 </div>
             </div>

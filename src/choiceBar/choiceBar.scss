@@ -1,6 +1,6 @@
-@import '../_sass.scss';
+@import "../_sass.scss";
 
-.choice-bar{
+.choice-bar {
     width: 100%;
     @include flexbox(center);
     background-color: white;
@@ -8,25 +8,27 @@
     z-index: 1;
     border-bottom: solid 2px black;
 }
-.platforms{
+.platforms {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    width:60%;
-    h1{
-        color: map-get($colors,font);
+    width: 60%;
+    @media (max-width: 600px) {
+        width: 90%;
+    }
+    h1 {
+        color: map-get($colors, font);
         font-size: 1.7rem;
-        font-family: 'Lato', sans-serif;
-        @media (max-width: 1000px){
-                font-size: 1.2rem;
+        font-family: "Lato", sans-serif;
+        @media (max-width: 1000px) {
+            font-size: 1.2rem;
         }
     }
-    &:hover{
+    &:hover {
         cursor: pointer;
         text-decoration: underline;
     }
 }
-#selected
-{
-    color: map-get($colors,bg);
+#selected {
+    color: map-get($colors, bg);
 }

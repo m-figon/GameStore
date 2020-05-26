@@ -97,10 +97,12 @@ class SignIn extends Component {
                 <h1>password</h1>
               </div>
               <div class="right">
+              <div class="line">
                 <input autocomplete="off" id="password" onChange={(e) => this.inputChange("password1", e)} type={this.state.type} value={this.state.password1} />
+                <button type="button" id="show" onClick={() => this.passwordHideShow()}>{visibleSrc}</button>
+              </div>
               </div>
             </div>
-            <button type="button" id="show" onClick={() => this.passwordHideShow()}>{visibleSrc}</button>
 
           </form>
 

@@ -59,5 +59,10 @@
     top: 0%;
   }
 }
+@media (max-width: 600px) {
+  .discount {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=ad.css.map */

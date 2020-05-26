@@ -1,27 +1,36 @@
-@import '../_sass.scss';
-.cart{
+@import "../_sass.scss";
+.cart {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 1.0rem;
+    margin-top: 1rem;
 }
-.section-cart{
+.section-cart {
     padding: 1rem 1rem;
     width: 60%;
-    background: url('../bg.jpg');
+    background: url("../bg.jpg");
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
+    @media (max-width: 700px) {
+        width: 80%;
+
+    }
 }
-#inside-cart-sign{
+#inside-cart-sign {
     font-size: 3rem;
-    color: (map-get($colors,bg));
+    color: (map-get($colors, bg));
+    @media (max-width: 550px) {
+        font-size: 1.5rem;
+
+    }
 }
 
-.product-inside{
+.product-inside {
     width: 40%;
     background-color: white;
+    border: 1px solid rgba(#000000, 0.4);
     margin: 1.5rem 0;
     border-radius: 10px;
     width: 20rem;
@@ -29,17 +38,25 @@
         left: 1.5rem;
         right: 1.5rem;
     }
-    @media (max-width: 1000px){
-            width:6rem;
+
+    @media (max-width: 1650px) {
+        width: 15rem;
     }
-    @media (max-width: 1300px){
-            width:10rem;
+    @media (max-width: 1300px) {
+        width: 10rem;
     }
-    @media (max-width: 1650px){
-            width:15rem;
+    @media (max-width: 1000px) {
+        width: 6rem;
+        
+    }
+    @media (max-width:  550px) {
+        margin: {
+            left: 5%;
+            right: 5%;
+        }
     }
 }
-#cancel{
+#cancel {
     position: absolute;
     margin: {
         left: 7rem;
@@ -47,33 +64,31 @@
     }
     width: 2rem;
     height: 2rem;
-    @media (max-width: 1650px){
-            margin: {
-                left: 6rem;
-                top: 6rem;
-            }
-            width: 1rem;
-            height: 1rem;
+    @media (max-width: 1650px) {
+        margin: {
+            left: 6rem;
+            top: 6rem;
         }
-    @media (max-width: 1300px){
-            margin: {
-                left: 2rem;
-                top: 2rem;
-            }
-            width: 1rem;
-            height: 1rem;
+        width: 1rem;
+        height: 1rem;
+    }
+    @media (max-width: 1300px) {
+        margin: {
+            left: 2rem;
+            top: 2rem;
+        }
+        width: 1rem;
+        height: 1rem;
     }
 }
-.product-sign{
-     img{
-        &:hover{
+.product-sign {
+    img {
+        &:hover {
             cursor: pointer;
-         }
-     }
+        }
+    }
 }
-.inside-cart{
+.inside-cart {
     display: grid;
     grid-template-columns: auto auto auto;
-    
 }
-
