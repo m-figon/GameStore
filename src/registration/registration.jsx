@@ -53,15 +53,15 @@ class Registration extends Component {
       console.log(e);
     }
   }
-  selectImplement(select, id, hidden, visible) {
+  selectImplement(select, id, hidden, visible, param) {
     try {
       if (select === "" || select.e === "none") {
         this.validate(id, "incorrect");
         this.showHideTooltip(hidden, visible);
+        param = false;
       } else {
         this.validate(id, "correct");
         this.showHideTooltip(visible, hidden);
-
       }
     } catch (e) {
       console.log(e);
@@ -69,9 +69,11 @@ class Registration extends Component {
   }
   displayData() {
     //console.log(this.state.selectCountry.e);
+    let correct = true;
     if (this.state.email.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null) {
       this.validate("#email", "incorrect");
       this.showHideTooltip("hiddenTooltip1", 'visibleTooltip1');
+      correct = false;
     } else {
       this.validate("#email", "correct");
       this.showHideTooltip("visibleTooltip1", 'hiddenTooltip1');
@@ -79,6 +81,7 @@ class Registration extends Component {
     if (this.state.account.match(/^[a-zA-Z0-9\.\-_]{4,10}$/) === null) {
       this.validate("#ac-name", "incorrect");
       this.showHideTooltip("hiddenTooltip2", 'visibleTooltip2');
+      correct = false;
     } else {
       this.validate("#ac-name", "correct");
       this.showHideTooltip("visibleTooltip2", 'hiddenTooltip2');
@@ -86,24 +89,37 @@ class Registration extends Component {
     if (this.state.password1.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/) === null) {
       this.validate("#password", "incorrect");
       this.showHideTooltip("hiddenTooltip3", 'visibleTooltip3');
+      correct = false;
     } else {
       this.validate("#password", "correct");
       this.showHideTooltip("visibleTooltip3", 'hiddenTooltip3');
-
     }
     if (this.state.password2 === this.state.password1 && this.state.password2 !== "") {
       this.validate("#confirm-password", "correct");
       this.showHideTooltip("visibleTooltip4", 'hiddenTooltip4');
-
     }
     else {
       this.validate("#confirm-password", "incorrect");
       this.showHideTooltip("hiddenTooltip4", 'visibleTooltip4');
+      correct = false;
     }
-    this.selectImplement(this.state.selectCountry, "#countries", "hiddenTooltip5", "visibleTooltip5");
-    this.selectImplement(this.state.selectMonth, "#months", "hiddenTooltip6", "visibleTooltip6");
-    this.selectImplement(this.state.selectDay, "#days", "hiddenTooltip6", "visibleTooltip6");
-    this.selectImplement(this.state.selectYear, "#years", "hiddenTooltip6", "visibleTooltip6");
+    this.selectImplement(this.state.selectCountry, "#countries", "hiddenTooltip5", "visibleTooltip5", correct);
+    this.selectImplement(this.state.selectMonth, "#months", "hiddenTooltip6", "visibleTooltip6", correct);
+    this.selectImplement(this.state.selectDay, "#days", "hiddenTooltip6", "visibleTooltip6", correct);
+    this.selectImplement(this.state.selectYear, "#years", "hiddenTooltip6", "visibleTooltip6", correct);
+    if (correct) {
+      fetch('https://rocky-citadel-32862.herokuapp.com/GameStore/Accounts', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: this.state.account,
+          password: this.state.password1,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+    }
+
   }
   showHideTooltip(name, newId) {
     try {
@@ -140,7 +156,7 @@ class Registration extends Component {
       <div class="registration">
         <div class="app-form">
           <form id="form">
-            
+
             <div class="one-line">
               <div class="left">
                 <h1>e-mail adress</h1>
