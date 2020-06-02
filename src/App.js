@@ -8,6 +8,7 @@ import Console from './console/console';
 import Cart from './cart/cart';
 import SignIn from './signin/signin';
  import { Route } from 'react-router-dom';
+ import load from './load.gif';
 class App extends Component {
   constructor() {
     super();
@@ -21,7 +22,8 @@ class App extends Component {
       PS: [],
       XBOX: [],
       PC: [],
-      NINTENDO: []
+      NINTENDO: [],
+      loadingId: ""
     };
     this.cartNumberUpdate = this.cartNumberUpdate.bind(this);
     this.cartDelete = this.cartDelete.bind(this);
@@ -43,6 +45,14 @@ class App extends Component {
     this.jsonFetch('https://rocky-citadel-32862.herokuapp.com/GameStore/XBOX','XBOX');
     this.jsonFetch('https://rocky-citadel-32862.herokuapp.com/GameStore/PC','PC');
     this.jsonFetch('https://rocky-citadel-32862.herokuapp.com/GameStore/NINTENDO','NINTENDO');
+    let interval=setInterval(()=>{
+      if(document.readyState==="complete"){
+        this.setState({
+          loadingId: "hidden"
+        })
+        clearInterval(interval);
+      }
+    },500)
     
   }
   setStateChange(type1, value1, type2, value2, type3, value3) {
@@ -139,6 +149,9 @@ class App extends Component {
         <Route exact path="/Login" component={LoginComponent}/>
         <Route exact path="/Register" component={RegisterComponent}/>
         <Route exact path="/Cart" component={CartComponent}/>
+        <div className="loading" id={this.state.loadingId}>
+          <img src={load}/>
+          </div>
         </>
       );
         
